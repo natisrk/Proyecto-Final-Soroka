@@ -58,3 +58,22 @@ def envioform(req):
     
     return render(req,'plantillas/app/envioform.html')
 
+def busquedanombre(req):
+    return render(req,'plantillas/app/busquedanombre.html')
+
+def buscar(req):
+
+    if req.GET["nombre"]:
+    
+        nombre = req.GET['nombre']
+
+        clientes = Cliente.objects.filter(nombre__icontains=nombre)
+
+        return render(req, "plantillas/app/resultadobusqueda.html", {"clientes": cliente, "nombre":nombre})
+
+    else:
+
+        respuesta = "No enviaste datos"
+
+    return HttpResponse(respuesta)
+

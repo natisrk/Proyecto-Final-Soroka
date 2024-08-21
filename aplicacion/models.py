@@ -14,4 +14,6 @@ class Envio(models.Model):
     calle = models.CharField(max_length=40)
     numero= models.IntegerField()
     localidad = models.CharField(max_length=40)
-
+    
+class Buscar(models.Model):
+    nombre =models.CharField(max_length=40)
