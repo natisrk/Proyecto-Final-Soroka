@@ -20,7 +20,7 @@ from entrega.views import saludo, probando_template, agregar_cliente, agregar_pr
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('aplicacion/', include('aplicacion.urls')),
+    path('', include('aplicacion.urls')),
     path('saludo/', saludo),
     path('plantilla/', probando_template),
     path('agregar_cliente/<nom>/<ap>/', agregar_cliente),
