@@ -10,16 +10,6 @@ def inicio(request):
 
 
 def cliente(req):
-    return render(req,'plantillas/app/cliente.html')
-
-def producto(req):
-    return render(req,'plantillas/app/producto.html')
-
-def envio(req):
-    return render(req,'plantillas/app/envio.html')
-
-
-def clienteform(req):
     
     if req.method == 'POST':
     
@@ -29,11 +19,11 @@ def clienteform(req):
         
      return render(req,'plantillas/app/padre.html')
     
-    return render(req,'plantillas/app/clienteform.html')
+    return render(req,'plantillas/app/cliente.html')
 
 
 
-def productoform(req):
+def producto(req):
     
     if req.method == 'POST':
     
@@ -43,10 +33,10 @@ def productoform(req):
         
      return render(req,'plantillas/app/padre.html')
     
-    return render(req,'plantillas/app/productoform.html')
+    return render(req,'plantillas/app/producto.html')
 
 
-def envioform(req):
+def envio(req):
     
     if req.method == 'POST':
     
@@ -56,7 +46,7 @@ def envioform(req):
         
      return render(req,'plantillas/app/padre.html')
     
-    return render(req,'plantillas/app/envioform.html')
+    return render(req,'plantillas/app/envio.html')
 
 def busquedanombre(req):
     return render(req,'plantillas/app/busquedanombre.html')

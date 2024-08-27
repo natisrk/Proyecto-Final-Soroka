@@ -13,11 +13,13 @@
     
     {% block contenidoQueCambia %} 
     
-    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-        <h1>Info Tienda Virtual</h1>
-        <p>Ingresando a formulario productos vas a poder ingresar el producto elegido.</p>
-        <p>Si queres validar si estas registrado, clickea en "Busqueda"</p>
-     
+    <form action="/producto/" method="post"> 
+        {% csrf_token %}
+        <p> Categoria: <input type="text" name="categoria"> </p>
+        <p> Producto: <input type="text" name="producto"> </p>
+        <input type="submit" value="Enviar">
+    </form>   
+ 
     
     {% endblock %}
 

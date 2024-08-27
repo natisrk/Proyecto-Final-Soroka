@@ -13,11 +13,12 @@
     
     {% block contenidoQueCambia %} 
     
-    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-        <h1>Info Tienda Virtual</h1>
-        <p>Ingresando al boton de formulario, podran registrarse</p>
-        <p>Si queres validar si estas registrado, clickea en "Busqueda"</p>
-       
+    <form action="/cliente/" method="post"> 
+        {% csrf_token %}
+        <p> Nombre: <input type="text" name="nombre"> </p>
+        <p> Apellido: <input type="text" name="apellido"> </p>
+        <input type="submit" value="Enviar">
+    </form>   
     
     {% endblock %}
 
