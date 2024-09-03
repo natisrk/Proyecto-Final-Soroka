@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Clientes</title>
+</head>
+<body>
+    {% extends 'plantillas/app/padre.html' %}
+
+    {% load static %}
+    
+    {% block contenidoQueCambia %} 
+
+    <h1 class="display-6 text-center" style="font-size: 26px">Lista de Clientes</h1>
+    <p class="display-7 text-center" style="font-size: 12">Clientes ingresados al sistema   </p>
+    <br>
+
+    <br><br>
+
+
+        {% for p in cliente %}
+            <li class="display-6" style="font-size: 16px">{{p}}</li>  
+            <button>
+                <a href="{% url 'eliminarcliente' p.nombre %}" class="display-6" style="font-size: 12px"> Eliminar</a>
+                
+                </button>
+            
+        {% endfor %}
+        <br>
+        <a href="{% url 'cliente' %}" class="display-6" style="font-size: 16px">Agregar Cliente</a>
+        <a href="{% url 'inicio' %}" class="display-6" style="font-size: 16px"></a>
+
+        {% endblock %}
+
+    </body>

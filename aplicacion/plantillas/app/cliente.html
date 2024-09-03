@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agregar Cliente</title>
 </head>
 <body>
 
@@ -12,6 +12,11 @@
     {% load static %}
     
     {% block contenidoQueCambia %} 
+
+    <h1 class="display-6 text-center" style="font-size: 26px">Agregar Cliente</h1>
+    <p class="display-7 text-center" style="font-size: 12">Completar con nombre y apellido    </p>
+    <br>
+
     
     <form action="/cliente/" method="post"> 
         {% csrf_token %}

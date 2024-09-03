@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deslogueado</title>
+</head>
+<body>
+
+    {% extends 'plantillas/app/padre.html' %}
+
+    {% load static %}
+    
+    {% block contenidoQueCambia %} 
+
+    <div class="d-flex justify-content-center">
+
+        <div class="d-flex flex-column">
+
+            <p class="fs-5 fw-bold">{{ msg_register }}</p>
+
+ <h1 class="display-6 text-center" style="font-size: 26px">Sesión Cerrada</h1>
+
+    <br><br>
+
+
+        </div>
+    </div>
+    {% endblock %}
+</body>
+

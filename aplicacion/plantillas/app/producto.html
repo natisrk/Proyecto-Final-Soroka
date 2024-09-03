@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agregar Producto</title>
 </head>
 <body>
 
@@ -13,6 +13,11 @@
     
     {% block contenidoQueCambia %} 
     
+    <h1 class="display-6 text-center" style="font-size: 26px">Agregar Producto</h1>
+    <p class="display-7 text-center" style="font-size: 12">Ingresar nuevo producto    </p>
+    <br>
+    
+
     <form action="/producto/" method="post"> 
         {% csrf_token %}
         <p> Categoria: <input type="text" name="categoria"> </p>

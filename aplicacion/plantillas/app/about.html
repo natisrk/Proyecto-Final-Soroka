@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<body>
+
+    {% extends 'plantillas/app/padre.html' %}
+
+    {% load static %}
+    
+    {% block contenidoQueCambia %} 
+    
+    <h1 class="display-6 text-center" style="font-size: 26px">Natalia Soroka</h1>
+
+    <br>
+
+    <p class="display-6 " style="font-size: 22px">Mi nombre es Natalia, soy mamá de una nena de 6 años. 
+        Trabajo en Claro como Analista en Automatización, puesto en el que me desempeño recientemente. 
+        Por lo cual, estoy capacitandome continuamente. <br>
+        En CoderHouse hice el curso de Data Analytics, y el de Python. <br>
+        Mi proyecto final se trata de una pagina de busqueda de base de datos de clientes, productos y domicilios de envío. <br>
+        El mismo es manejado por los diferentes trabajadores de la tienda virtual y pueden registrarse, loguearse, desloguearse, modificar sus datos y avatares. 
+    </p>
+
+
+
+    {% endblock %}
+
+</body>
+</html>

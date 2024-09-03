@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar pass    </title>
+</head>
+<body>
+
+    {% extends 'plantillas/app/padre.html' %}
+
+    {% load static %}
+    
+    {% block contenidoQueCambia %} 
+
+    <h1 class="display-6 text-center" style="font-size: 26px">Editar contraseña</h1>
+
+    <br><br>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        <table>
+            {{ form.as_table }}
+        </table>
+
+        <input type="submit" value="Cambiar pass">
+
+    </form>
+   
+    {% endblock %}
+</body>

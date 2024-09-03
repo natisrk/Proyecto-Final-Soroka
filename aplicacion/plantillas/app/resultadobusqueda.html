@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Resultado</title>
 </head>
 <body>
-    
-    <p>El cliente {{ nombre }} se encuentra registrado.</p>
 
-    {% if clientes %}
-    <ul>
-    {% for cliente in clientes %}
-        <li>{{ cliente.nombre }}</li>
-        <li>{{ cliente.apellido }}</li>
-    {% endfor %}
-    </ul>
-    {% endif %}
+    {% extends 'plantillas/app/padre.html' %}
+
+    {% load static %}
+    
+    {% block contenidoQueCambia %} 
+
+          <p>El cliente {{ nombre }} se encuentra registrado.</p>
+    
+        {% if clientes %}
+        <ul>
+        {% for cliente in clientes %}
+            <li>{{ cliente.nombre }}</li>
+            <li>{{ cliente.apellido }}</li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    
+      {% endblock %}
 
 </body>
 </html>

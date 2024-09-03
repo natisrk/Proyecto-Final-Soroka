@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Buscar</title>
 </head>
 <body>
+
+    {% extends 'plantillas/app/padre.html' %}
+
+    {% load static %}
+    
+    {% block contenidoQueCambia %} 
+
+    <h1 class="display-6 text-center" style="font-size: 26px">Busqueda Por nombre de Cliente</h1>
+    <br>
+    <p class="display-6 " style="font-size: 22px">Introduce nombre de cliente    </p>
+    <br>
+
     
 <form action="/aplicacion/buscar/" method="GET">
     <input type="text" name="nombre" id="nombre">
     <input type="submit" value="Buscar">
 
 </form>
+    {% endblock %}
+
 
 </body>
 </html>

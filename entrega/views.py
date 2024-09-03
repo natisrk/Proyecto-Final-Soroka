@@ -48,3 +48,5 @@ def agregar_envio(request,calle,num,loc):
     envio = Envio(calle=calle, numero=num, localidad=loc)
     envio.save()
     return HttpResponse("Domicilio guardado")
+
+

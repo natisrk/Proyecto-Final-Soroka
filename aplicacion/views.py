@@ -1,14 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from aplicacion.models import Cliente, Producto, Envio
+from django.contrib.auth.decorators import login_required
+from datetime import datetime
+
+
 
 # Create your views here.
 
 
 def inicio(request):
-    return render(request,'plantillas/app/padre.html')
+    hoy = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    return render(request, 'plantillas/app/padre.html', {'hoy': hoy})
+
+def about(request):
+    return render(request,'plantillas/app/about.html')
 
 
+@login_required
 def cliente(req):
     
     if req.method == 'POST':
@@ -22,7 +31,7 @@ def cliente(req):
     return render(req,'plantillas/app/cliente.html')
 
 
-
+@login_required
 def producto(req):
     
     if req.method == 'POST':
@@ -36,6 +45,7 @@ def producto(req):
     return render(req,'plantillas/app/producto.html')
 
 
+@login_required
 def envio(req):
     
     if req.method == 'POST':
@@ -47,6 +57,7 @@ def envio(req):
      return render(req,'plantillas/app/padre.html')
     
     return render(req,'plantillas/app/envio.html')
+
 
 def busquedanombre(req):
     return render(req,'plantillas/app/busquedanombre.html')
@@ -66,4 +77,52 @@ def buscar(req):
         respuesta = "No enviaste datos"
 
     return HttpResponse(respuesta)
+
+@login_required
+def leerclientes(request):
+
+      cliente = Cliente.objects.all()
+
+      contexto= {"cliente":cliente} 
+
+      return render(request, 'plantillas/app/leerclientes.html',contexto)
+
+@login_required
+def eliminarcliente(request, cliente_nombre):
+ 
+    cliente = Cliente.objects.get(nombre=cliente_nombre)
+    cliente.delete()
+ 
+    cliente = Cliente.objects.all()  
+ 
+    contexto = {"cliente": cliente}
+ 
+    return render(request, 'plantillas/app/leerclientes.html', contexto)
+
+
+def ClienteFormulario(request):  
+
+    print("Entrando en la vista clienteformulario")  
+
+    if request.method == 'POST':
+        print("Solicitud POST recibida")  
+
+        miFormulario = ClienteFormulario(request.POST) 
+
+        if miFormulario.is_valid():
+            print("Formulario válido")  
+            informacion = miFormulario.cleaned_data
+            cliente = Cliente(nombre=informacion['nombre'], apellido=informacion['apellido'])
+           
+            cliente.save()
+
+            return render(request, 'plantillas/app/padre.html') 
+        else:
+            print("Formulario no válido") 
+
+    else:
+        print("Solicitud GET recibida") 
+        miFormulario = ClienteFormulario()
+
+    return render(request, 'plantillas/app/cliente.html', {"miFormulario": miFormulario})
 
