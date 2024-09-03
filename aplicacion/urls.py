@@ -15,7 +15,6 @@ urlpatterns = [
     path('eliminarcliente/<cliente_nombre>/', views.eliminarcliente, name= 'eliminarcliente'),
     path('about/', views.about, name='about'),
    
-   
   
 ]
 
