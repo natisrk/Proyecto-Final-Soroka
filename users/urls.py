@@ -7,7 +7,7 @@ urlpatterns = [
     path('register/', views.register, name="Register"),
     path('logout/', LogoutView.as_view(template_name='plantillas/users/sesioncerrada.html'), name="Logout"),
     path('edit/', views.editar_perfil, name="EditarPerfil"),
-    path('ambiar_pass/', views.CambiarContrasenia.as_view(), name="Cambiar_pass"),
+    path('Cambiar_pass/', views.CambiarContrasenia.as_view(), name="Cambiar_pass"),
     
 ]
     
